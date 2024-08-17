@@ -4,8 +4,14 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/style.css">
         <title>FOORBALL</title>
         <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
             body{
                 width: 100%;
                 height: 100vh;
@@ -13,6 +19,7 @@
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;
+                position: relative;
             }
             .ball{
                 border-radius: 50%;
@@ -24,10 +31,63 @@
                 left: 50%;
                 translate: -50% -50%;
             }
+            .red_cap {
+                /* background-color: red; */
+                width: 50px;
+                height: 120px;
+                position: absolute;
+                top: 50%;
+                right: 1%;
+                translate: -50% -50%;
+            }
+            .blue_cap {
+                /* background-color: blue; */
+                width: 50px;
+                height: 120px;
+                position: absolute;
+                top: 50%;
+                left: 4%;
+                translate: -50% -50%;
+            }
+            .score{
+                position: absolute;
+                left: 50%;
+                translate: -50%;
+                background-color: #fff;
+                border: 1px solid black;
+                border-radius: 5px;
+                width: 300px;
+                height: 75px;
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                display: none;
+            }
+            .blue,
+            .red {
+                width: 50px;
+                height: 50px;
+                border: 1px solid black;
+                border-radius: 5px;
+                text-align: center;
+                font-size: 40px;
+            }
+            .active{
+                display: flex;
+                transition: .5s ease;
+            }
         </style>
     </head>
     <body>
-        <img draggable="true" src="/ball.png" class="ball"></img>
+        <div class="score">
+            <span>BLUE:</span>
+            <div class="blue"><p class="blue_score">0</p></div>
+            <div class="red"><p class="red_score">0</p></div>
+            <span>:RED</span>
+        </div>
+        <div class="red_cap"></div>
+        <div class="blue_cap"></div>
+        <img draggable="true" class="ball" src="/ball.png" alt=""></img>
         <script type="module" src="/main.js"></script>
     </body>
 </html>
